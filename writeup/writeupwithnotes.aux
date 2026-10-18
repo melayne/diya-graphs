@@ -1,0 +1,101 @@
+\relax 
+\providecommand\hyper@newdestlabel[2]{}
+\providecommand\HyField@AuxAddToFields[1]{}
+\providecommand\HyField@AuxAddToCoFields[2]{}
+\@writefile{toc}{\contentsline {section}{\tocsection {}{1}{Problem formulation}}{1}{section.1}\protected@file@percent }
+\newlabel{weighted graph Laplacian}{{1.1}{1}{Problem formulation}{equation.1.1}{}}
+\newlabel{quadratic form}{{1.2}{1}{Problem formulation}{equation.1.2}{}}
+\newlabel{shifted graph Laplacian white noise}{{1.3}{2}{Problem formulation}{equation.1.3}{}}
+\newlabel{random coefficient}{{1.4}{2}{Problem formulation}{equation.1.4}{}}
+\newlabel{weighted graph Laplacian problem}{{1.5}{2}{Problem formulation}{equation.1.5}{}}
+\@writefile{toc}{\contentsline {section}{\tocsection {}{2}{Connection to the PDE Setting}}{3}{section.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\tocsection {}{3}{Needed tools}}{3}{section.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\tocsection {}{4}{Implementation}}{3}{section.4}\protected@file@percent }
+\newlabel{sec:impl}{{4}{3}{Implementation}{section.4}{}}
+\@writefile{toc}{\contentsline {subsection}{\tocsubsection {}{4.1}{Phase 0: Data Import and Visualization}}{3}{subsection.4.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\tocsubsubsection {}{4.1.1}{Importing the Data}}{4}{subsubsection.4.1.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\tocsubsubsection {}{4.1.2}{Visualizing the Data}}{4}{subsubsection.4.1.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\tocsubsection {}{4.2}{Dataset: Oregon Router Network}}{5}{subsection.4.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\tocsubsection {}{4.3}{Phase 1: Building the Graph Matrices}}{5}{subsection.4.3}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces Structure of the Oregon Router network ($n = 11{,}174$ vertices, $23{,}409$ edges). Node size and color both reflect vertex degree, which ranges from 1 to 2{,}389.}}{6}{figure.caption.1}\protected@file@percent }
+\providecommand*\caption@xref[2]{\@setref\relax\@undefined{#1}}
+\newlabel{fig:oregon_network}{{1}{6}{Structure of the Oregon Router network ($n = 11{,}174$ vertices, $23{,}409$ edges). Node size and color both reflect vertex degree, which ranges from 1 to 2{,}389}{figure.caption.1}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Degree distribution of the Oregon Router network (log scale on the vertical axis). The distribution is heavily right-skewed: most vertices have low degree, with a small number reaching into the hundreds or above.}}{7}{figure.caption.2}\protected@file@percent }
+\newlabel{fig:oregon_degree_dist}{{2}{7}{Degree distribution of the Oregon Router network (log scale on the vertical axis). The distribution is heavily right-skewed: most vertices have low degree, with a small number reaching into the hundreds or above}{figure.caption.2}{}}
+\@writefile{toc}{\contentsline {subsection}{\tocsubsection {}{4.4}{Phase 2: The Shifted Laplacian}}{7}{subsection.4.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\tocsubsection {}{4.5}{Phase 3: White Noise Sampling}}{8}{subsection.4.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\tocsubsubsection {}{4.5.1}{3a. Draw Edge Noise}}{8}{subsubsection.4.5.1}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces Eigenvalues of the generalized problem $(L,D)$ before shifting (left) versus eigenvalues of the shifted Laplacian ${\mathcal  L}_\sigma $ after shifting (right), computed on a 15-vertex illustrative graph. The unshifted problem has one eigenvalue at exactly zero, corresponding to graph connectivity; this is what makes $L$ singular. Adding $\sigma ^2\lambda _{\min }D$ shifts every eigenvalue upward by the same relative amount, eliminating the zero eigenvalue and making ${\mathcal  L}_\sigma $ symmetric positive definite.}}{9}{figure.caption.3}\protected@file@percent }
+\newlabel{fig:phase2_eigenvalues}{{3}{9}{Eigenvalues of the generalized problem $(L,D)$ before shifting (left) versus eigenvalues of the shifted Laplacian $\L _\sigma $ after shifting (right), computed on a 15-vertex illustrative graph. The unshifted problem has one eigenvalue at exactly zero, corresponding to graph connectivity; this is what makes $L$ singular. Adding $\sigma ^2\lambda _{\min }D$ shifts every eigenvalue upward by the same relative amount, eliminating the zero eigenvalue and making $\L _\sigma $ symmetric positive definite}{figure.caption.3}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\tocsubsubsection {}{4.5.2}{3b. Map Noise to Nodes}}{10}{subsubsection.4.5.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\tocsubsubsection {}{4.5.3}{3c. Make Noise Spatially Correlated}}{10}{subsubsection.4.5.3}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces Values at each edge's two endpoints, plotted against one another, for the raw noise $f$ (left) and the spatially correlated field $u$ (right), computed on the Oregon Router network ($n=11{,}174$). Points clustering near the $y=x$ line indicate that connected vertices tend to share similar values. The stark contrast in correlation (0.111 versus 0.616) confirms that the Phase 3c solve introduces genuine spatial correlation.}}{11}{figure.caption.4}\protected@file@percent }
+\newlabel{fig:phase3_local_correlation}{{4}{11}{Values at each edge's two endpoints, plotted against one another, for the raw noise $f$ (left) and the spatially correlated field $u$ (right), computed on the Oregon Router network ($n=11{,}174$). Points clustering near the $y=x$ line indicate that connected vertices tend to share similar values. The stark contrast in correlation (0.111 versus 0.616) confirms that the Phase 3c solve introduces genuine spatial correlation}{figure.caption.4}{}}
+\@writefile{toc}{\contentsline {subsection}{\tocsubsection {}{4.6}{Phase 4: Edge Permeability}}{12}{subsection.4.6}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\tocsubsection {}{4.7}{Phase 5: Weighted Laplacian and Darcy Flow}}{12}{subsection.4.7}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\tocsubsubsection {}{4.7.1}{5a. Build Weighted Laplacian}}{12}{subsubsection.4.7.1}\protected@file@percent }
+\newlabel{sec:gamma_selection}{{4.8}{13}{Gamma\_in / Gamma\_out Selection}{subsection.4.8}{}}
+\@writefile{toc}{\contentsline {subsection}{\tocsubsection {}{4.8}{Gamma\_in / Gamma\_out Selection}}{13}{subsection.4.8}\protected@file@percent }
+\citation{crescenzi2010finding}
+\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces Gamma-selection method used per dataset, chosen to match each graph's dominant structural property.}}{14}{table.caption.5}\protected@file@percent }
+\newlabel{tab:gamma_methods}{{1}{14}{Gamma-selection method used per dataset, chosen to match each graph's dominant structural property}{table.caption.5}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\tocsubsubsection {}{4.8.1}{Approach 1: Degree-Based Selection}}{14}{subsubsection.4.8.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\tocsubsubsection {}{4.8.2}{Approach 2: Diameter Endpoints}}{14}{subsubsection.4.8.2}\protected@file@percent }
+\citation{crescenzi2010finding}
+\citation{clauset2004finding}
+\citation{clauset2004finding}
+\@writefile{toc}{\contentsline {paragraph}{\tocparagraph {}{}{Implementation.}}{15}{section*.6}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{\tocparagraph {}{}{Implementation.}}{15}{section*.7}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\tocsubsubsection {}{4.8.3}{Approach 3: Community Detection}}{15}{subsubsection.4.8.3}\protected@file@percent }
+\newlabel{sec:darcy}{{4.8.4}{16}{Step 5b: Solve Darcy Flow}{subsubsection.4.8.4}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\tocsubsubsection {}{4.8.4}{Step 5b: Solve Darcy Flow}}{16}{subsubsection.4.8.4}\protected@file@percent }
+\newlabel{sec:qoi_normalization}{{4.9}{17}{Phase 6: Quantity of Interest}{subsection.4.9}{}}
+\@writefile{toc}{\contentsline {subsection}{\tocsubsection {}{4.9}{Phase 6: Quantity of Interest}}{17}{subsection.4.9}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\tocsubsection {}{4.10}{Phase 7: Monte Carlo Simulation}}{17}{subsection.4.10}\protected@file@percent }
+\newlabel{sec:mlmc_integration}{{4.11}{18}{Two-Level Monte Carlo}{subsection.4.11}{}}
+\@writefile{toc}{\contentsline {subsection}{\tocsubsection {}{4.11}{Two-Level Monte Carlo}}{18}{subsection.4.11}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces Distribution of $Q$ (left) and Monte Carlo convergence (right) for single-level sampling on Oregon Router, $N=1000$ samples. The running mean stabilizes well before $N=1000$.}}{19}{figure.caption.8}\protected@file@percent }
+\newlabel{fig:oregon_single_level_qoi}{{5}{19}{Distribution of $Q$ (left) and Monte Carlo convergence (right) for single-level sampling on Oregon Router, $N=1000$ samples. The running mean stabilizes well before $N=1000$}{figure.caption.8}{}}
+\newlabel{sec:boundary_fraction}{{4.11.1}{19}{Precondition: Boundary Fraction}{subsubsection.4.11.1}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\tocsubsubsection {}{4.11.1}{Precondition: Boundary Fraction}}{19}{subsubsection.4.11.1}\protected@file@percent }
+\newlabel{sec:aggregation}{{4.11.2}{20}{Aggregation Algorithm}{subsubsection.4.11.2}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\tocsubsubsection {}{4.11.2}{Aggregation Algorithm}}{20}{subsubsection.4.11.2}\protected@file@percent }
+\newlabel{sec:paired_sampling}{{4.11.3}{21}{Paired Sampling and the Two-Level Estimator}{subsubsection.4.11.3}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\tocsubsubsection {}{4.11.3}{Paired Sampling and the Two-Level Estimator}}{21}{subsubsection.4.11.3}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces Fine graph (left) and coarse graph (right) for Oregon Router, produced by the group-preserving aggregation algorithm. Red vertices are $\Gamma _{\text  {in}}$, cyan vertices are $\Gamma _{\text  {out}}$; gray (fine) and green (coarse) vertices are interior. Node size in the coarse graph reflects aggregate size.}}{22}{figure.caption.9}\protected@file@percent }
+\newlabel{fig:oregon_fine_coarse}{{6}{22}{Fine graph (left) and coarse graph (right) for Oregon Router, produced by the group-preserving aggregation algorithm. Red vertices are $\Gamma _{\text {in}}$, cyan vertices are $\Gamma _{\text {out}}$; gray (fine) and green (coarse) vertices are interior. Node size in the coarse graph reflects aggregate size}{figure.caption.9}{}}
+\newlabel{sec:rhesus}{{4.11.4}{23}{A Mechanistic Failure Case: Rhesus Brain}{subsubsection.4.11.4}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\tocsubsubsection {}{4.11.4}{A Mechanistic Failure Case: Rhesus Brain}}{23}{subsubsection.4.11.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\tocsubsection {}{4.12}{Results}}{23}{subsection.4.12}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\tocsubsubsection {}{4.12.1}{Successful Cases}}{23}{subsubsection.4.12.1}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces Two-level Monte Carlo results on datasets where the method succeeded.}}{23}{table.caption.10}\protected@file@percent }
+\newlabel{tab:successes}{{2}{23}{Two-level Monte Carlo results on datasets where the method succeeded}{table.caption.10}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\tocsubsubsection {}{4.12.2}{Failure Cases}}{23}{subsubsection.4.12.2}\protected@file@percent }
+\citation{clauset2004finding}
+\@writefile{lot}{\contentsline {table}{\numberline {3}{\ignorespaces Datasets where two-level Monte Carlo failed, and why.}}{24}{table.caption.11}\protected@file@percent }
+\newlabel{tab:failures}{{3}{24}{Datasets where two-level Monte Carlo failed, and why}{table.caption.11}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\tocsubsubsection {}{4.12.3}{Structural Validity Is Necessary but Not Sufficient}}{24}{subsubsection.4.12.3}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {4}{\ignorespaces Modularity as a predictor of statistical success, holding gamma-selection method and graph density approximately constant.}}{24}{table.caption.12}\protected@file@percent }
+\newlabel{tab:modularity}{{4}{24}{Modularity as a predictor of statistical success, holding gamma-selection method and graph density approximately constant}{table.caption.12}{}}
+\newlabel{sec:single_vs_two_level}{{4.12.4}{24}{Comparison to Single-Level Monte Carlo}{subsubsection.4.12.4}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\tocsubsubsection {}{4.12.4}{Comparison to Single-Level Monte Carlo}}{24}{subsubsection.4.12.4}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {5}{\ignorespaces Single-level versus two-level Monte Carlo on Oregon Router, matched to approximately the same target standard error. The two-level row is reported both from this project's own implementation and from a general multi-level Monte Carlo framework developed alongside the PDE-based approach this project extends, via the adapter described in Section\nonbreakingspace \ref {sec:mlmc_integration}.}}{25}{table.caption.13}\protected@file@percent }
+\newlabel{tab:single_vs_two_level_oregon}{{5}{25}{Single-level versus two-level Monte Carlo on Oregon Router, matched to approximately the same target standard error. The two-level row is reported both from this project's own implementation and from a general multi-level Monte Carlo framework developed alongside the PDE-based approach this project extends, via the adapter described in Section~\ref {sec:mlmc_integration}}{table.caption.13}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces Convergence of $Q_{\text  {fine}}$, $Q_{\text  {coarse}}$ (left), and the correction term $Q_{\text  {fine}} - Q_{\text  {coarse}}$ (right) on Oregon Router, over 300 paired samples. Both quantities' running means stabilize within approximately the first 100 samples, visually confirming the high correlation ($0.9996$) and strong variance reduction ($31.83\times $) reported above.}}{26}{figure.caption.14}\protected@file@percent }
+\newlabel{fig:oregon_convergence}{{7}{26}{Convergence of $Q_{\text {fine}}$, $Q_{\text {coarse}}$ (left), and the correction term $Q_{\text {fine}} - Q_{\text {coarse}}$ (right) on Oregon Router, over 300 paired samples. Both quantities' running means stabilize within approximately the first 100 samples, visually confirming the high correlation ($0.9996$) and strong variance reduction ($31.83\times $) reported above}{figure.caption.14}{}}
+\@writefile{toc}{\contentsline {subsection}{\tocsubsection {}{4.13}{Summary}}{26}{subsection.4.13}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {6}{\ignorespaces Single-level versus two-level Monte Carlo on US Power Grid, both using $N=300$ fine-graph samples for direct comparability. Unlike the Oregon Router comparison (Table\nonbreakingspace \ref {tab:single_vs_two_level_oregon}), sample counts here are not matched to a target precision; rather, both methods use the same fixed number of expensive fine-graph samples, and we compare the resulting precision directly.}}{27}{table.caption.15}\protected@file@percent }
+\newlabel{tab:single_vs_two_level_powergrid}{{6}{27}{Single-level versus two-level Monte Carlo on US Power Grid, both using $N=300$ fine-graph samples for direct comparability. Unlike the Oregon Router comparison (Table~\ref {tab:single_vs_two_level_oregon}), sample counts here are not matched to a target precision; rather, both methods use the same fixed number of expensive fine-graph samples, and we compare the resulting precision directly}{table.caption.15}{}}
+\citation{Cliffe11}
+\citation{Osborn17,Osborn17b}
+\citation{Dodwell15}
+\citation{fairbanks}
+\bibstyle{plainnat}
+\bibdata{betterrefs}
+\newlabel{tocindent-1}{0pt}
+\newlabel{tocindent0}{0pt}
+\newlabel{tocindent1}{20.88867pt}
+\newlabel{tocindent2}{41.25pt}
+\newlabel{tocindent3}{0pt}
+\@writefile{toc}{\contentsline {section}{\tocsection {}{5}{Further extensions}}{28}{section.5}\protected@file@percent }
+\gdef \@abspage@last{28}
